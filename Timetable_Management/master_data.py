@@ -11,6 +11,7 @@ def db_connect():
     return engine
 
 def Master(time,s):
+    """ Returns data of master timetable o be displayed on screen in format 'location:Subject-Batch-Faculty' """	
     db = db_connect()
     connection = db.connect()
     master_sem1 = 'master_sem1'
