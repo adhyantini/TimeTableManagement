@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Master Timetable | Timetable System - Computer Department</title>
+    <!-- Favicon-->
+    <link rel="icon" href="/static/img/logo.png" type="image">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="/static/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="/static/css/basic_style/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+    
+    <!-- Waves Effect Css -->
+    <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Colorpicker Css -->
+    <link href="/static/css/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link href="/static/css/dropzone/dropzone.css" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link href="/static/css/multi-select/css/multi-select.css" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link href="/static/css/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="/static/css/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="/static/css/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- noUISlider Css -->
+    <link href="/static/css/nouislider/nouislider.min.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="/static/css/basic_style/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-cyan">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/dashboard"><b>Timetable System | Computer Department - P.E.S. Modern College of Engineering</b></title></a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        
+                        <li class="header">NAVIGATION</li>
+                        
+                        <li>
+                            <a href="/dashboard">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>                 
+                        
+                        <li>
+                            <a href="/view_timetable">
+                                <i class="material-icons">view_list</i>
+                                <span>View Timetables</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/create_timetable">
+                                <i class="material-icons">assignment</i>
+                                <span>Enter Timetable Data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/edit_timetable">
+                                <i class="material-icons">edit</i>
+                                <span>Edit Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings">
+                                <i class="material-icons">settings</i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+    
+                        <li>
+                                <a href="/teacherdata">
+                                    <i class="material-icons">person</i>
+                                    <span>Teacher Data</span>
+                                </a>
+                        </li>
+    
+                        <li>
+                            <a href="/logout">
+                                <i class="material-icons">logout</i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+    
+                        
+                        
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2020 Batch <a href="javascript:void(0);">Computer Department</a>
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+        </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>LOCATION TIMETABLE</h2>
+            </div>
+            
+            <form action="/view_timetable_location" method="POST">
+			<div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+								Timetable for the Location
+                                <small>Please select a location from the dropdown menu</small>
+                            </h2>
+                            <select name = 'Edit_Faculty_Location' id = 'Edit_Faculty_Location'>
+                                <option> SL1</option>
+                                <option> SL2</option>
+                                <option> SysL</option>
+                                <option> HL</option>
+                                <option> PR</option>
+                                <option> PL</option>
+                                <option> ONL1</option>
+                                <option> ONL2</option>
+                                <option> ONL3</option>
+                                <option> PGL</option>
+                                <option> 422</option>
+                                <option> 424</option>
+                                <option> 320</option>
+                                <option> 325</option>
+                                <option> 420B</option>
+                        </select><br><br>
+                        <div class="row">
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-pink waves-effect" name="submit" id="submit" value="submit" type="submit">SEARCH</button>
+                            <button class="btn btn-block bg-pink waves-effect" name="download" id="download" value="download" type="submit">DOWNLOAD EXCEL</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+                        </div>
+                       
+                                    
+            
+			<!-- Bordered Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Slot</th>
+										<th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+										<th>Friday</th>
+										<th>Saturday</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="td" >{{data[0]}}</td>
+                                        <td class="td" >{{data[1]}}</td>
+                                        <td class="td" >{{data[2]}}</td>
+                                        <td class="td" >{{data[3]}}</td>
+                                        <td class="td" >{{data[4]}}</td>
+                                        <td class="td" >{{data[5]}}</td>
+                                        <td class="td" >{{data[6]}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="td" >{{data[7]}}</td>
+                                        <td class="td" >{{data[8]}}</td>
+                                        <td class="td" >{{data[9]}}</td>
+                                        <td class="td" >{{data[10]}}</td>
+                                        <td class="td" >{{data[11]}}</td>
+                                        <td class="td" >{{data[12]}}</td>
+                                        <td class="td" >{{data[13]}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="td" >{{data[14]}}</td>
+                                        <td class="td" >{{data[15]}}</td>
+                                        <td class="td" >{{data[16]}}</td>
+                                        <td class="td" >{{data[17]}}</td>
+                                        <td class="td" >{{data[18]}}</td>
+                                        <td class="td" >{{data[19]}}</td>
+                                        <td class="td" >{{data[20]}}</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="td" >{{data[21]}}</td>
+                                        <td class="td" >{{data[22]}}</td>
+                                        <td class="td" >{{data[23]}}</td>
+                                        <td class="td" >{{data[24]}}</td>
+                                        <td class="td" >{{data[25]}}</td>
+                                        <td class="td" >{{data[26]}}</td>
+                                        <td class="td" >{{data[27]}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="td" >{{data[28]}}</td>
+                                        <td class="td" >{{data[29]}}</td>
+                                        <td class="td" >{{data[30]}}</td>
+                                        <td class="td" >{{data[31]}}</td>
+                                        <td class="td" >{{data[32]}}</td>
+                                        <td class="td" >{{data[33]}}</td>
+                                        <td class="td" >{{data[34]}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="td" >{{data[35]}}</td>
+                                        <td class="td" >{{data[36]}}</td>
+                                        <td class="td" >{{data[37]}}</td>
+                                        <td class="td" >{{data[38]}}</td>
+                                        <td class="td" >{{data[39]}}</td>
+                                        <td class="td" >{{data[40]}}</td>
+                                        <td class="td" >{{data[41]}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="td" >{{data[42]}}</td>
+                                        <td class="td" >{{data[43]}}</td>
+                                        <td class="td" >{{data[44]}}</td>
+                                        <td class="td" >{{data[45]}}</td>
+                                        <td class="td" >{{data[46]}}</td>
+                                        <td class="td" >{{data[47]}}</td>
+                                        <td class="td" >{{data[48]}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="td" >{{data[49]}}</td>
+                                        <td class="td" >{{data[50]}}</td>
+                                        <td class="td" >{{data[51]}}</td>
+                                        <td class="td" >{{data[52]}}</td>
+                                        <td class="td" >{{data[53]}}</td>
+                                        <td class="td" >{{data[54]}}</td>
+                                        <td class="td" >{{data[55]}}</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Bordered Table -->
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="/static/js/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="/static/js/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="/static/js/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="/static/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="/static/js/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="/static/js/Basic_js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="/static/js/Basic_js/demo.js"></script>
+</body>
+
+</html>

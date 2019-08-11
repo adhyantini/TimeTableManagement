@@ -1,0 +1,1195 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Master Timetable | Timetable System - Computer Department</title>
+        <!-- Favicon-->
+        <link rel="icon" href="/static/img/logo.png" type="image">
+    
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    
+        <!-- Bootstrap Core Css -->
+        <link href="/static/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+    
+        <!-- Waves Effect Css -->
+        <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+    
+        <!-- Animation Css -->
+        <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+    
+        <!-- Custom Css -->
+        <link href="/static/css/basic_style/style.css" rel="stylesheet">
+    
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+            
+            <!-- Waves Effect Css -->
+        <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+    
+        <!-- Animation Css -->
+        <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+    
+        <!-- Colorpicker Css -->
+        <link href="/static/css/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    
+        <!-- Dropzone Css -->
+        <link href="/static/css/dropzone/dropzone.css" rel="stylesheet">
+    
+        <!-- Multi Select Css -->
+        <link href="/static/css/multi-select/css/multi-select.css" rel="stylesheet">
+    
+        <!-- Bootstrap Spinner Css -->
+        <link href="/static/css/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+    
+        <!-- Bootstrap Tagsinput Css -->
+        <link href="/static/css/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    
+        <!-- Bootstrap Select Css -->
+        <link href="/static/css/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    
+        <!-- noUISlider Css -->
+        <link href="/static/css/nouislider/nouislider.min.css" rel="stylesheet" />
+    
+        <!-- Custom Css -->
+        <link href="/static/css/basic_style/style.css" rel="stylesheet">
+    
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-cyan">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/dashboard"><b>Timetable System | Computer Department - P.E.S. Modern College of Engineering</b></title></a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+                <!-- Left Sidebar -->
+                <aside id="leftsidebar" class="sidebar">
+                    
+                                <!-- Menu -->
+                    <div class="menu">
+                        <ul class="list">
+                            
+                                                <li class="header">NAVIGATION</li>
+                            
+                                                <li>
+                                <a href="/dashboard">
+                                    <i class="material-icons">home</i>
+                                    <span>Home</span>
+                                </a>
+                            </li>                 
+                            
+                                                <li>
+                                <a href="/view_timetable">
+                                    <i class="material-icons">view_list</i>
+                                    <span>View Timetables</span>
+                                </a>
+                            </li>
+                                                
+                                                <li>
+                                <a href="/create_timetable">
+                                    <i class="material-icons">assignment</i>
+                                    <span>Enter Timetable Data</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edit_timetable">
+                                    <i class="material-icons">edit</i>
+                                    <span>Edit Timetable</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/settings">
+                                    <i class="material-icons">settings</i>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+        
+                            <li>
+                                    <a href="/teacherdata">
+                                        <i class="material-icons">person</i>
+                                        <span>Teacher Data</span>
+                                    </a>
+                            </li>
+        
+                            <li>
+                                <a href="/logout">
+                                    <i class="material-icons">logout</i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+        
+                            
+                                                
+                        </ul>
+                    </div>
+                    <!-- #Menu -->
+                    <!-- Footer -->
+                    <div class="legal">
+                        <div class="copyright">
+                            &copy; 2020 Batch <a href="javascript:void(0);">Computer Department</a>
+                        </div>
+                    </div>
+                    <!-- #Footer -->
+                </aside>
+                <!-- #END# Left Sidebar -->
+                </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>MASTER TIMETABLE</h2>
+                     <form action="/view_timetable_master" method="POST"> 
+                        <button class="btn btn-block bg-pink waves-effect" name="submit" id="submit" value="submit"type="submit">VIEW MASTER</button>
+                        <button class="btn btn-block bg-pink waves-effect" name="download" id="download" value="download" type="submit">DOWNLOAD EXCEL</button>
+
+                     </form>   
+                
+            </div>
+            
+			<!-- Bordered Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>Slot</th>
+                                        <th>SL - 1</th>
+                                        <th>SL - 2</th>
+                                        <th>SysL</th>
+                                        <th>HL</th>
+					<th>PR</th>
+					<th>PL</th>
+					<th>ONL - 1</th>
+					<th>OnL - 2</th>
+					<th>ONL - 3</th>
+					<th>PGL</th>
+					<th>422</th>
+					<th>424</th>
+					<th>320</th>
+					<th>325</th>
+					<th>420 - B</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--Monday Slot : 1-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[0]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[1]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[2]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[3]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[4]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[5]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[6]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[7]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[8]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[9]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[10]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[11]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[12]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[13]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[14]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[15]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 2-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[16]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[17]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[18]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[19]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[20]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[21]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[22]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[23]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[24]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[25]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[26]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[27]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[28]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[29]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[30]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[31]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 3-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[32]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[33]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[34]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[35]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[36]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[37]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[38]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[39]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[40]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[41]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[42]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[43]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[44]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[45]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[46]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[47]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 4-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[48]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[49]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[50]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[51]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[52]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[53]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[54]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[55]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[56]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[57]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[58]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[59]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[60]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[61]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[62]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[63]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 5-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[64]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[65]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[66]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[67]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[68]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[69]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[70]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[71]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[72]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[73]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[74]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[75]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[76]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[77]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[78]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[79]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 6-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[80]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[81]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[82]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[83]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[84]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[85]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[86]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[87]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[88]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[89]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[90]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[91]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[92]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[93]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[94]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[95]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 7-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[96]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[97]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[98]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[99]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[100]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[101]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[102]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[103]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[104]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[105]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[106]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[107]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[108]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[109]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[110]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[111]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!--Monday Slot : 8-->
+                                    <tr>
+                                            <td class="td" >Monday</td>
+                                            <td class="td" >{{data[112]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[113]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[114]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[115]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[116]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[117]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[118]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[119]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[120]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[121]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[122]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[123]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[124]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[125]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[126]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[127]}}</td> <!-- For 420B -->
+                                    </tr>
+                                        <!-- TUESDAY SLOT 1-->
+                                    <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[128]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[129]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[130]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[131]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[132]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[133]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[134]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[135]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[136]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[137]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[138]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[139]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[140]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[141]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[142]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[143]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[144]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[145]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[146]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[147]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[148]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[149]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[150]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[151]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[152]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[153]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[154]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[155]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[156]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[157]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[158]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[159]}}</td> <!-- For 420B -->
+                                    </tr>
+                                    <!-- TUESDAY SLOT 3-->
+                                    <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[160]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[161]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[162]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[163]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[164]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[165]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[166]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[167]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[168]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[169]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[170]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[171]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[172]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[173]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[174]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[175]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                      <!-- TUESDAY SLOT 4-->
+                                      <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[176]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[177]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[178]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[179]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[180]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[181]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[182]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[183]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[184]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[185]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[186]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[187]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[188]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[189]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[190]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[191]}}</td> <!-- For 420B -->
+                                    </tr>
+                                              <!-- TUESDAY SLOT 5-->
+                                    <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[192]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[193]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[194]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[195]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[196]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[197]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[198]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[199]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[200]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[201]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[202]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[203]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[204]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[205]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[206]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[207]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                      <!-- TUESDAY SLOT 6-->
+                                      <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[208]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[209]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[210]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[211]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[212]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[213]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[214]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[215]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[216]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[217]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[218]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[219]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[220]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[221]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[222]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[223]}}</td> <!-- For 420B -->
+                                    </tr>
+                                          <!-- TUESDAY SLOT 7-->
+                                    <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[224]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[225]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[226]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[227]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[228]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[229]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[230]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[231]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[232]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[233]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[234]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[235]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[236]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[237]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[238]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[239]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                      <!-- TUESDAY SLOT 8-->
+                                      <tr>
+                                            <td class="td" >Tuesday</td>
+                                            <td class="td" >{{data[240]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[241]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[242]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[243]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[244]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[245]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[246]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[247]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[248]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[249]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[250]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[251]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[252]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[253]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[254]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[255]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                      <!-- Wednesday SLOT 1-->
+                                      <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[256]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[257]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[258]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[259]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[260]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[261]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[262]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[263]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[264]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[265]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[266]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[267]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[268]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[269]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[270]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[271]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Wednesday SLOT 2-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[272]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[273]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[274]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[275]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[276]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[277]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[278]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[279]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[280]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[281]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[282]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[283]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[284]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[285]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[286]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[287]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Wednesday SLOT 3-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[288]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[289]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[290]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[291]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[292]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[293]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[294]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[295]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[296]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[297]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[298]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[299]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[300]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[301]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[302]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[303]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Wednesday SLOT 4-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[304]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[305]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[306]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[307]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[308]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[309]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[310]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[311]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[312]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[313]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[314]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[315]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[316]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[317]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[318]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[319]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Wednesday SLOT 5-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[320]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[321]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[322]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[323]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[324]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[325]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[326]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[327]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[328]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[329]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[330]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[331]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[332]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[333]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[334]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[335]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Wednesday SLOT 6-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[336]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[337]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[338]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[339]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[340]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[341]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[342]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[343]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[344]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[345]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[346]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[347]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[348]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[349]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[350]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[351]}}</td> <!-- For 420B -->
+                                    </tr>
+
+
+                                    <!-- Wednesday SLOT 7-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[352]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[353]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[354]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[355]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[356]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[357]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[358]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[359]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[360]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[361]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[362]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[363]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[364]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[365]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[366]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[367]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Wednesday SLOT 8-->
+                                    <tr>
+                                            <td class="td" >Wednesday</td>
+                                            <td class="td" >{{data[368]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[369]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[370]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[371]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[372]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[373]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[374]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[375]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[376]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[377]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[378]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[379]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[380]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[381]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[382]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[383]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 1-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[384]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[385]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[386]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[387]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[388]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[389]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[390]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[391]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[392]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[393]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[394]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[395]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[396]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[397]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[398]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[399]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 2-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[400]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[401]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[402]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[403]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[404]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[405]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[406]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[407]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[408]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[409]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[410]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[411]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[412]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[413]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[414]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[415]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 3-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[416]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[417]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[418]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[419]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[420]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[421]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[422]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[423]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[424]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[425]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[426]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[427]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[428]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[429]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[430]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[431]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 4-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[432]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[433]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[434]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[435]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[436]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[437]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[438]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[439]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[440]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[441]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[442]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[443]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[444]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[445]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[446]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[447]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 5-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[448]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[449]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[450]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[451]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[452]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[453]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[454]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[455]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[456]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[457]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[458]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[459]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[460]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[461]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[462]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[463]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 6-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[464]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[465]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[466]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[467]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[468]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[469]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[470]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[471]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[472]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[473]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[474]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[475]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[476]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[477]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[478]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[479]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 7-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[480]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[481]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[482]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[483]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[484]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[485]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[486]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[487]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[488]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[489]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[490]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[491]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[492]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[493]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[494]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[495]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Thursday SLOT 8-->
+                                    <tr>
+                                            <td class="td" >Thursday</td>
+                                            <td class="td" >{{data[496]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[497]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[498]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[499]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[500]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[501]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[502]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[503]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[504]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[505]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[506]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[507]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[508]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[509]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[510]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[511]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Friday SLOT 1-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[512]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[513]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[514]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[515]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[516]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[517]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[518]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[519]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[520]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[521]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[522]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[523]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[524]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[525]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[526]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[527]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Friday SLOT 2-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[528]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[529]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[530]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[531]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[532]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[533]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[534]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[535]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[536]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[537]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[538]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[539]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[540]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[541]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[542]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[543]}}</td> <!-- For 420B -->
+                                    </tr>
+                                       
+                                    <!-- Friday SLOT 3-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[544]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[545]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[546]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[547]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[548]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[549]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[550]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[551]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[552]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[553]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[554]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[555]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[556]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[557]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[558]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[559]}}</td> <!-- For 420B -->
+                                    </tr>
+                                        <!-- Friday SLOT 4-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[560]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[561]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[562]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[563]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[564]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[565]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[566]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[567]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[568]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[569]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[570]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[571]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[572]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[573]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[574]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[575]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Friday SLOT 5-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[576]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[577]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[578]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[579]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[580]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[581]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[582]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[583]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[584]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[585]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[586]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[587]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[588]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[589]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[590]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[591]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Friday SLOT 6-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[592]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[593]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[594]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[595]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[596]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[597]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[598]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[599]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[600]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[601]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[602]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[603]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[604]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[605]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[606]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[607]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- Friday SLOT 7-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[608]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[609]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[610]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[611]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[612]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[613]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[614]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[615]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[616]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[617]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[618]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[619]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[620]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[621]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[622]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[623]}}</td> <!-- For 420B -->
+                                    </tr>
+
+
+                                    <!-- Friday SLOT 8-->
+                                    <tr>
+                                            <td class="td" >Friday</td>
+                                            <td class="td" >{{data[624]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[625]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[626]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[627]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[628]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[629]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[630]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[631]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[632]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[633]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[634]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[635]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[636]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[637]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[638]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[639]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- SAturday SLOT 1-->
+                                    <tr>
+                                            <td class="td" >SAturday</td>
+                                            <td class="td" >{{data[640]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[641]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[642]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[643]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[644]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[645]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[646]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[647]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[648]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[649]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[650]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[651]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[652]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[653]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[654]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[655]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- SAturday SLOT 2-->
+                                    <tr>
+                                            <td class="td" >Saturday</td>
+                                            <td class="td" >{{data[656]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[657]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[658]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[659]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[660]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[661]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[662]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[663]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[664]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[665]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[666]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[667]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[668]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[669]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[670]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[671]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- SAturday SLOT 3-->
+                                    <tr>
+                                            <td class="td" >Saturday</td>
+                                            <td class="td" >{{data[672]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[673]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[674]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[675]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[676]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[677]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[678]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[679]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[680]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[681]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[682]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[683]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[684]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[685]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[686]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[687]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- SAturday SLOT 4-->
+                                    <tr>
+                                            <td class="td" >Saturday</td>
+                                            <td class="td" >{{data[688]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[689]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[690]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[691]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[692]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[693]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[694]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[695]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[696]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[697]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[698]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[699]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[700]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[701]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[702]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[703]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- SAturday SLOT 5-->
+                                    <tr>
+                                            <td class="td" >Saturday</td>
+                                            <td class="td" >{{data[704]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[705]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[706]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[707]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[708]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[709]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[710]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[711]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[712]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[713]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[714]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[715]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[716]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[717]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[718]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[719]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                    <!-- SAturday SLOT 6-->
+                                    <tr>
+                                            <td class="td" >Saturday</td>
+                                            <td class="td" >{{data[720]}}</td> <!-- For Slot Number-->
+                                            <td class="td" >{{data[721]}}</td> <!-- For SL-1 -->
+                                            <td class="td" >{{data[722]}}</td> <!-- For SL-2 -->
+                                            <td class="td" >{{data[723]}}</td> <!-- For SysL -->
+                                            <td class="td" >{{data[724]}}</td> <!-- For HL -->
+                                            <td class="td" >{{data[725]}}</td> <!-- For PR -->
+                                            <td class="td" >{{data[726]}}</td> <!-- For PL -->
+                                            <td class="td" >{{data[727]}}</td> <!-- For ONL-1 -->
+                                            <td class="td" >{{data[728]}}</td> <!-- For ONL-2 -->
+                                            <td class="td" >{{data[729]}}</td> <!-- For ONL-3 -->
+                                            <td class="td" >{{data[730]}}</td> <!-- For PGL -->
+                                            <td class="td" >{{data[731]}}</td> <!-- For 422 -->
+                                            <td class="td" >{{data[732]}}</td> <!-- For 424 -->
+                                            <td class="td" >{{data[733]}}</td> <!-- For 320 -->
+                                            <td class="td" >{{data[734]}}</td> <!-- For 325 -->
+                                            <td class="td" >{{data[735]}}</td> <!-- For 420B -->
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Bordered Table -->
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="/static/js/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="/static/js/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="/static/js/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="/static/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="/static/js/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="/static/js/Basic_js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="/static/js/Basic_js/demo.js"></script>
+</body>
+
+</html>

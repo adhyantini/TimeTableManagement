@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Create Timetable | Timetable System - Computer Department</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="../../logo.png" type="image">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Colorpicker Css -->
+    <link href="../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link href="../../plugins/dropzone/dropzone.css" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link href="../../plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link href="../../plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- noUISlider Css -->
+    <link href="../../plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="../../Dashboard.html"><b>Timetable System | Computer Department - P.E.S. Modern College of Engineering</b></title></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse"></div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        
+                        <li class="header">NAVIGATION</li>
+                        
+                        <li>
+                            <a href="/dashboard">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>                 
+                        
+                        <li>
+                            <a href="/view_timetable">
+                                <i class="material-icons">view_list</i>
+                                <span>View Timetables</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/create_timetable">
+                                <i class="material-icons">assignment</i>
+                                <span>Enter Timetable Data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/edit_timetable">
+                                <i class="material-icons">edit</i>
+                                <span>Edit Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings">
+                                <i class="material-icons">settings</i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+    
+                        <li>
+                                <a href="/teacherdata">
+                                    <i class="material-icons">person</i>
+                                    <span>Teacher Data</span>
+                                </a>
+                            </li>
+                        <li>
+                            <a href="/logout">
+                                <i class="material-icons">logout</i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2020 Batch <a href="javascript:void(0);">Computer Department</a>
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+        </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Enter Data per Cell in the Timetable</h2>
+            </div>
+            
+            <!-- Advanced Select -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Enter Data per Cell in the Timetable.
+                                <small>If the slot is null tick mark the Null Slot tickbox.</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-md-4">
+                                    <p>
+                                        <b>Day</b>
+                                    </p>
+                                    <select class="form-control show-tick">
+                                        <option>Monday</option>
+                                        <option>Tuesday</option>
+                                        <option>Wednesday</option>
+										<option>Thusrsday</option>
+										<option>Friday</option>
+										<option>Saturday</option>
+										<option>Sunday</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <p>
+                                        <b>Slot</b>
+                                    </p>
+                                    <select class="form-control show-tick">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <p>
+                                        <b>Location</b>
+                                    </p>
+                                    <select class="form-control show-tick">
+                                        <optgroup label="Classrooms">
+                                            <option>422</option>
+                                            <option>424</option>
+                                            <option>320</option>
+											<option>325</option>
+											<option>420-B</option>
+                                        </optgroup>
+                                        <optgroup label="Labs">
+                                            <option>SL - 1</option>
+                                            <option>SL - 2</option>
+                                            <option>System Lab</option>
+											<option>Hardware Lab</option>
+											<option>Project Lab</option>
+											<option>Programming Lab</option>
+											<option>System Lab</option>
+											<option>Online Lab - 1</option>
+											<option>Online Lab - 2</option>
+											<option>Online Lab - 3</option>
+											<option>PG Lab</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-md-4">
+                                    <p>
+                                        <b>Batch</b>
+                                    </p>
+                                    <select class="form-control show-tick">
+										<optgroup label="First Shift">	
+											<optgroup label="S.E. Shift-1">
+												<option value="S11" id="S11">S1</option>
+												<option value="S12" id="S12">S2</option>
+												<option value="S13" id="S13">S3</option>
+												<option value="S14" id="S14">S4</option>
+											</optgroup>
+											<optgroup label="T.E. Shift-1">
+												<option value="T11" id="T11">T1</option>
+												<option value="T12" id="T12">T2</option>
+												<option value="T13" id="T13">T3</option>
+												<option value="T14" id="T14">T4</option>
+											</optgroup>
+											<optgroup label="B.E. Shift-1">
+												<option value="B11" id="B11">B1</option>
+												<option value="B12" id="B12">B2</option>
+												<option value="B13" id="B13">B3</option>
+												<option value="B14" id="B14">B4</option>
+											</optgroup>
+										</optgroup>
+										<optgroup label="Second Shift">	
+											<optgroup label="S.E. Shift-2">
+												<option value="S21" id="S21">S1</option>
+												<option value="S22" id="S22">S2</option>
+												<option value="S23" id="S23">S3</option>
+												<option value="S24" id="S24">S4</option>
+											</optgroup>
+											<optgroup label="T.E. Shift-2">
+												<option value="T21" id="T21">T1</option>
+												<option value="T22" id="T22">T2</option>
+												<option value="T23" id="T23">T3</option>
+												<option value="T24" id="T24">T4</option>
+											</optgroup>
+											<optgroup label="B.E. Shift-2">
+												<option value="B21" id="B21">B1</option>
+												<option value="B22" id="B22">B2</option>
+												<option value="B23" id="B23">B3</option>
+												<option value="B24" id="B24">B4</option>
+											</optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <p>
+                                        <b>Subject</b>
+                                    </p>
+                                    <select class="form-control show-tick">
+                                        <optgroup label="S.E. Sem 1">
+												<option value="S11" id="S11">S1</option>
+												<option value="S12" id="S12">S2</option>
+												<option value="S13" id="S13">S3</option>
+												<option value="S14" id="S14">S4</option>
+										</optgroup>
+										<optgroup label="T.E. Sem 1">
+												<option value="T11" id="T11">T1</option>
+												<option value="T12" id="T12">T2</option>
+												<option value="T13" id="T13">T3</option>
+												<option value="T14" id="T14">T4</option>
+										</optgroup>
+										<optgroup label="B.E. Sem 1">
+												<option value="B11" id="B11">B1</option>
+												<option value="B12" id="B12">B2</option>
+												<option value="B13" id="B13">B3</option>
+												<option value="B14" id="B14">B4</option>
+										</optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>
+                                        <b>Faculty</b>
+                                    </p>
+                                    <select class="form-control show-tick" data-show-subtext="true">
+                                        <option data-subtext="French's">Mustard</option>
+                                        <option data-subtext="Heinz">Ketchup</option>
+                                        <option data-subtext="Sweet">Relish</option>
+                                        <option data-subtext="Miracle Whip">Mayonnaise</option>
+                                        <option data-divider="true"></option>
+                                        <option data-subtext="Honey">Barbecue Sauce</option>
+                                        <option data-subtext="Ranch">Salad Dressing</option>
+                                        <option data-subtext="Sweet &amp; Spicy">Tabasco</option>
+                                        <option data-subtext="Chunky">Salsa</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Advanced Select -->
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="../../plugins/dropzone/dropzone.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="../../plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="../../plugins/multi-select/js/jquery.multi-select.js"></script>
+
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="../../plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="../../plugins/nouislider/nouislider.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../../plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/forms/advanced-form-elements.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../../js/demo.js"></script>
+</body>
+
+</html>

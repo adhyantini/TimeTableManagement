@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>View Timetables | Timetable System - Computer Department</title>
+    <!-- Favicon-->
+    <link rel="icon" href="/static/img/logo.png" type="image">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="/static/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="/static/css/basic_style/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/dashboard"><b>Timetable System | Computer Department - P.E.S. Modern College of Engineering</b></title></a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        
+                        <li class="header">NAVIGATION</li>
+                        
+                        <li>
+                            <a href="/dashboard">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>                 
+                        
+                        <li>
+                            <a href="/view_timetable">
+                                <i class="material-icons">view_list</i>
+                                <span>View Timetables</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/create_timetable">
+                                <i class="material-icons">assignment</i>
+                                <span>Enter Timetable Data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/edit_timetable">
+                                <i class="material-icons">edit</i>
+                                <span>Edit Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings">
+                                <i class="material-icons">settings</i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+    
+                        <li>
+                                <a href="/teacherdata">
+                                    <i class="material-icons">person</i>
+                                    <span>Teacher Data</span>
+                                </a>
+                        </li>
+    
+                        <li>
+                            <a href="/logout">
+                                <i class="material-icons">logout</i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+    
+                        
+                        
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2020 Batch <a href="javascript:void(0);">Computer Department</a>
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+        </section>
+	
+    <section class="content">
+        <div class="container-fluid">
+            <!-- No Header Card -->
+            <div class="block-header">
+                <h2>View Timetables</h2>
+            </div>
+            
+			<a href="/view_timetable_master">	
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="body bg-red">
+								<div class="card-inside-title">
+										MASTER TIMETABLE
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</a>
+				
+            <div class="row">
+				<a href="/view_timetable_teacher">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="card">
+							<div class="body bg-deep-orange">
+								<div class="card-inside-title">
+										FACULTY TIMETABLE
+								</div>
+								View the Timetable based on the selection of a particular Teacher. 
+							</div>
+						</div>
+					</div>
+				</a>
+					
+					
+				<a href="/view_timetable_location">	
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="card">
+							<div class="body  bg-deep-orange">
+								<div class="card-inside-title">
+										LOCATION TIMETABLE
+								</div>
+								View the Timetable based on the selection of a particular Classroom or Lab. 
+							</div>
+						</div>
+					</div>
+				</a>
+            		
+				<a href="view_timetable_batch">	
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="card">
+							<div class="body bg-deep-orange">
+								<div class="card-inside-title">
+										BATCH TIMETABLE
+								</div>
+								View the Timetable based on the selection of a particular Practical Batch. 
+							</div>
+						</div>
+					</div>
+				</a>
+					
+            </div>  
+            <!-- #END# No Header Card -->
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="/static/js/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="/static/js/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="/static/js/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="/static/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="/static/js/node-waves/waves.js"></script>
+
+    <!-- Wait Me Plugin Js -->
+    <script src="/static/js/waitme/waitMe.js"></script>
+
+    <!-- Custom Js -->
+    <script src="/static/js/Basic_js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="/static/js/Basic_js/demo.js"></script>
+</body>
+</html>

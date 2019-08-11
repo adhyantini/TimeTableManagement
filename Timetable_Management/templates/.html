@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<link rel="icon" href="../../../logo.png" type="image">
+			<script language="javascript" type="text/javascript">
+			function dynamicdropdown(listindex)
+			
+			{
+				switch (listindex)
+				
+				{
+
+				case "FE" :
+					document.getElementById("Batch").options[0]=new Option("--select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("F1","F1");
+					document.getElementById("Batch").options[2]=new Option("F2","F2");
+					document.getElementById("Batch").options[3]=new Option("F11","F11");
+					document.getElementById("Batch").options[4]=new Option("F12","F12");
+					document.getElementById("Batch").options[5]=new Option("F13","F13");
+					document.getElementById("Batch").options[6]=new Option("F14","F14");
+					document.getElementById("Batch").options[7]=new Option("F21","F21");
+					document.getElementById("Batch").options[8]=new Option("F22","F22");
+					document.getElementById("Batch").options[9]=new Option("F23","F23");
+					document.getElementById("Batch").options[10]=new Option("F24","F24");
+					break;
+				case "SE" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					
+					document.getElementById("Batch").options[1]=new Option("S1","S1");
+					document.getElementById("Batch").options[2]=new Option("S2","S2");
+					document.getElementById("Batch").options[3]=new Option("S11","S11");
+					document.getElementById("Batch").options[4]=new Option("S12","S12");
+					document.getElementById("Batch").options[5]=new Option("S13","S13");
+					document.getElementById("Batch").options[6]=new Option("S14","S14");
+					document.getElementById("Batch").options[7]=new Option("S21","S21");
+					document.getElementById("Batch").options[8]=new Option("S22","S22");
+					document.getElementById("Batch").options[9]=new Option("S23","S23");
+					document.getElementById("Batch").options[10]=new Option("S24","S24");
+					break;
+				case "TE" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("T1","T1");
+					document.getElementById("Batch").options[2]=new Option("T2","T2");
+					document.getElementById("Batch").options[3]=new Option("T11","T11");
+					document.getElementById("Batch").options[4]=new Option("T12","T12");
+					document.getElementById("Batch").options[5]=new Option("T13","T13");
+					document.getElementById("Batch").options[6]=new Option("T14","T14");
+					document.getElementById("Batch").options[7]=new Option("T21","T21");
+					document.getElementById("Batch").options[8]=new Option("T22","T22");
+					document.getElementById("Batch").options[9]=new Option("T23","T23");
+					document.getElementById("Batch").options[10]=new Option("T24","T24");
+					break;
+				case "BE" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("B1","B1");
+					document.getElementById("Batch").options[2]=new Option("B2","B2");
+					document.getElementById("Batch").options[3]=new Option("B11","B11");
+					document.getElementById("Batch").options[4]=new Option("B12","B12");
+					document.getElementById("Batch").options[5]=new Option("B13","B13");
+					document.getElementById("Batch").options[6]=new Option("B14","B14");
+					document.getElementById("Batch").options[7]=new Option("B21","B21");
+					document.getElementById("Batch").options[8]=new Option("B22","B22");
+					document.getElementById("Batch").options[9]=new Option("B23","B23");
+					document.getElementById("Batch").options[10]=new Option("B24","B24");
+					break;
+
+				case "ME" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("M1","M1");
+					document.getElementById("Batch").options[2]=new Option("M11","M11");
+					document.getElementById("Batch").options[3]=new Option("M12","M12");
+					document.getElementById("Batch").options[4]=new Option("M13","M13");
+					document.getElementById("Batch").options[5]=new Option("M14","M14");
+					break;
+
+				
+				case "CLEANING" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("NULL","NULL");
+					break;
+
+				case "MAINTAINANCE" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("NULL","NULL");
+					
+					break;
+
+
+				case "NULL" :
+					document.getElementById("Batch").options[0]=new Option("--Select Batch--","");
+					document.getElementById("Batch").options[1]=new Option("NULL","NULL");
+					break;		 
+				}
+
+				
+				return true;
+			}
+
+		</script>
+
+	<style>			
+		body {
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		.topnav {
+		overflow: hidden;
+		background-color: #F44336;
+		text-color: #fff;
+		margin-bottom:2px;
+		font-weight:  bold;
+		}
+
+		.topnav a {
+		  float: left;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		  color: #fff;
+		  font-weight:  bold;
+		}
+
+		.header {
+		text-color: #999;
+		font-size:30px;
+		padding-bottom:20px;
+		padding-right:20px;		
+		padding-top:30px;
+
+		}
+		
+		.topnav a:hover {
+			background-color: #F44336;
+			color: #fff;
+		}
+
+		.topnav a.active {
+			background-color: #cf392e;
+			color: #fff;
+			font-weight:  bold;
+		}
+		
+		.topnav_new {
+		overflow: hidden;
+		background-color: #c43f35;
+		text-color: #fff;
+		margin-bottom:2px;
+		font-weight:  bold;
+		}
+
+		.topnav_new a {
+		  float: left;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		  color: #fff;
+		  background-color: #c43f35;
+		  font-weight:  bold;
+		}
+
+		.topnav_new a:hover {
+			background-color: #c43f35;
+			color: #fff;
+		}
+
+		.topnav_new a.active {
+			background-color: #333;
+			color: #fff;
+			font-weight:  bold;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="topnav">
+			<a href="E:\My Projects\Time_Table\AdminBSBMaterialDesign-master\pages\widgets\cards\Dashboard.html">
+				Timetable System | Computer Department - P.E.S. Modern College of Engineering
+			</a>
+	</div>
+	
+	<div class="topnav_new">
+		<a href="/dashboard">Dashboard</a>
+		<a href="/view_timetable">View Timetable</a>
+		<a class="active" href="/edit_timetable">Edit Timetable</a>
+		<a href="/settings">Settings</a>
+		<a href="/logout">Logout</a>
+	</div>
+
+	<div style="padding-left:50px">
+		<div class="header">
+			Enter Data per Cell in the Timetable
+		</div>
+	</div>
+
+<div style="padding-left:50px">
+	<form action="/create_timetable" method="POST">
+
+		Select Sem :<br>
+		<select id="Sem" name="Sem">
+			<option value="">--Select Sem--</option>
+			<option value="Sem1">Semester-1</option>
+			<option value="Sem2">Semester-2</option>
+		</select>
+		<br><br>
+		
+		Day:<br>
+		<select id="Day" name="Day">
+			<option value="">--Select Day--</option>
+			<option value="Monday">Monday</option>
+			<option value="Tuesday">Tuesday</option>
+			<option value="Wednesday">Wednesday</option>
+			<option value="Thursday">Thursday</option>
+			<option value="Friday">Friday</option>
+			<option value="Saturday">Saturday</option>
+		</select>
+		<br><br>
+
+
+
+		Slot:<br>
+		<select id="Slot" name="Slot">
+			<option value="">--Select Slot--</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+		<br><br>
+		
+		
+		
+		
+		Location:<br>
+		<select id="Location" name="Location">
+			<option value="">--Select classroom/lab--</option>
+			<option value="SL1">SL1</option>
+			<option value="SL2">SL2</option>
+			<option value="SysL">SysL</option>
+			<option value="HL">HL</option>
+			<option value="PR">PR</option>
+			<option value="PL">PL</option>
+			<option value="ONL1">ONL1</option>
+			<option value="ONL2">ONL2</option>
+			<option value="ONL3">ONL3</option>
+			<option value="PGL">PGL</option>
+			<option value="422">422</option>
+			<option value="424">424</option>
+			<option value="320">320</option>
+			<option value="325">325</option>
+			<option value="420B">420B</option>
+		</select>
+		<br><br>
+		
+		
+		<div class="category_div" id="category_div">Class : <br>
+				<select id="Division" name="Division" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+				<option value="">--Select class--</option>
+				<option value="FE">FE</option>
+				<option value="SE">SE</option>
+				<option value="TE">TE</option>
+				<option value="BE">BE</option>
+				<option value="ME">ME</option>
+				<option value="CLEANING">CLEANING</option>
+				<option value="MAINTAINANCE">MAINTAINANCE</option>
+				<option value="NULL">NULL</option>
+				</select>
+			</div> <br>
+		
+		
+
+			<div class="sub_category_div" id="sub_category_div">Batch :<br>
+				<script type="text/javascript" language="JavaScript">
+				document.write('<select name="Batch" id="Batch"><option value="">--Please Select Batch--</option></select>')
+				</script>
+				<noscript>
+				<select id="Batch" name="Batch">
+					<option value="">--Please select Batch--</option>
+				</select>	
+				</noscript>
+			</div> <br>
+
+		Subject:<br>
+		<input type="text" name="Subject" id="Subject" value="">
+		<br><br>
+
+		Faculty:<br>
+		<input type="text" name="Faculty" id="Faculty" value="">
+		<br><br>
+		
+		<br>
+		<div style="padding-bottom:75px">
+			<input type="submit" name="Submit" id="Submit" value="Submit">
+		</div>
+	</form>
+</div>
+
+</body>
+</html>

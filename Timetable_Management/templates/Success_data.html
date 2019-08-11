@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<link rel="icon" href="/static/img/logo.png" type="image">
+			
+	<style>			
+		body {
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		.topnav {
+		overflow: hidden;
+		background-color: #F44336;
+		color: #fff;
+		margin-bottom:2px;
+		font-weight:  bold;
+		}
+
+		.topnav a {
+		  float: left;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		  color: #fff;
+		  font-weight:  bold;
+		}
+
+		.header {
+		color: #999;
+		font-size:30px;
+		padding-bottom:20px;
+		padding-right:20px;		
+		padding-top:30px;
+
+		}
+		
+		.topnav a:hover {
+			background-color: #F44336;
+			color: #fff;
+		}
+
+		.topnav a.active {
+			background-color: #cf392e;
+			color: #fff;
+			font-weight:  bold;
+		}
+		
+		.topnav_new {
+		overflow: hidden;
+		background-color: #c43f35;
+		color: #fff;
+		margin-bottom:2px;
+		font-weight:  bold;
+		}
+
+		.topnav_new a {
+		  float: left;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		  color: #fff;
+		  background-color: #c43f35;
+		  font-weight:  bold;
+		}
+
+		.topnav_new a:hover {
+			background-color: #c43f35;
+			color: #fff;
+		}
+
+		.topnav_new a.active {
+			background-color: #333;
+			color: #fff;
+			font-weight:  bold;
+		}
+		
+		.btn {
+			background-color: #333;
+			color: #fff;
+			font-weight:  bold;
+			font-size:15px;
+			width:150px;
+			height:40px;
+		}
+		
+		.col-xs-4 a {
+		  color: #fff;
+		}
+	</style>
+</head>
+<body>
+
+	<!--Top NAvigation BAr-->
+	<div class="topnav">
+			<a href='/dashboard'>
+				Timetable System | Computer Department - P.E.S. Modern College of Engineering
+			</a>
+	</div>
+	
+	<div class="topnav_new">
+		<a href="/dashboard">Dashboard</a>
+		<a href="/view_timetable">View Timetable</a>
+		<a class="active" href="/edit_timetable">Edit Timetable</a>
+		<a href="/settings">Settings</a>
+		<a href="/logout">Logout</a>
+	</div>
+
+	<div style="padding-left:50px">
+		<div class="header">
+			<b>{{data}}</b>
+		</div>
+	</div>
+
+<div style="padding-left:50px">
+	
+	<!--Form-->
+	<form method="POST">
+		<br>
+		<div class="col-xs-4">
+            <a href='\create_timetable'>
+				<input type="button" class="btn" value="Yes"></input>
+			</a>
+			<a href='\dashboard'>
+				<input type="button" class="btn" value="No"></input>
+			</a>
+		</div>
+	</form>
+</div>
+
+</body>
+</html>

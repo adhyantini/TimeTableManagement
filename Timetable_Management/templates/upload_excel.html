@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<style>
+
+input[type=submit] {
+            width: 20%;
+            background-color: #555555;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type=submit]:hover {
+            background-color: #554444;
+          }
+    
+h1,h3 { 
+        text-align: center;
+        text-transform: uppercase;
+        color: #555555;
+        }
+</style>
+</head>
+<body>
+<center><br><br><br><br>
+<h1>Upload EXCEL SHEET</h1><br>
+<p><small>Please Note : Upload ONlY .xls files</small></p>
+<form action="\upload" method=post enctype=multipart/form-data>
+<input type=file name=file><br><br>
+<input type=submit value=Upload>
+</form></center>
+</body>
+</html>

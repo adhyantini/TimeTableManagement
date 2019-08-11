@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Master Timetable | Timetable System - Computer Department</title>
+        <!-- Favicon-->
+        <link rel="icon" href="/static/img/logo.png" type="image">
+    
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    
+        <!-- Bootstrap Core Css -->
+        <link href="/static/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+    
+        <!-- Waves Effect Css -->
+        <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+    
+        <!-- Animation Css -->
+        <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+    
+        <!-- Custom Css -->
+        <link href="/static/css/basic_style/style.css" rel="stylesheet">
+    
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+        
+        <!-- Waves Effect Css -->
+        <link href="/static/css/node-waves/waves.css" rel="stylesheet" />
+    
+        <!-- Animation Css -->
+        <link href="/static/css/animate-css/animate.css" rel="stylesheet" />
+    
+        <!-- Colorpicker Css -->
+        <link href="/static/css/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    
+        <!-- Dropzone Css -->
+        <link href="/static/css/dropzone/dropzone.css" rel="stylesheet">
+    
+        <!-- Multi Select Css -->
+        <link href="/static/css/multi-select/css/multi-select.css" rel="stylesheet">
+    
+        <!-- Bootstrap Spinner Css -->
+        <link href="/static/css/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+    
+        <!-- Bootstrap Tagsinput Css -->
+        <link href="/static/css/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    
+        <!-- Bootstrap Select Css -->
+        <link href="/static/css/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    
+        <!-- noUISlider Css -->
+        <link href="/static/css/nouislider/nouislider.min.css" rel="stylesheet" />
+    
+        <!-- Custom Css -->
+        <link href="/static/css/basic_style/style.css" rel="stylesheet">
+    
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/static/css/basic_style/themes/all-themes.css" rel="stylesheet" />
+
+        
+
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-cyan">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/dashboard"><b>Timetable System | Computer Department - P.E.S. Modern College of Engineering</b></title></a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        
+                        <li class="header">NAVIGATION</li>
+                        
+                        <li>
+                            <a href="/dashboard">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>                 
+                        
+                        <li>
+                            <a href="/view_timetable">
+                                <i class="material-icons">view_list</i>
+                                <span>View Timetables</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/create_timetable">
+                                <i class="material-icons">assignment</i>
+                                <span>Enter Timetable Data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/edit_timetable">
+                                <i class="material-icons">edit</i>
+                                <span>Edit Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings">
+                                <i class="material-icons">settings</i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                                <a href="/teacherdata">
+                                    <i class="material-icons">person</i>
+                                    <span>Teacher Data</span>
+                                </a>
+                            </li>
+
+                        <li>
+                            <a href="/logout">
+                                <i class="material-icons">logout</i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2020 Batch <a href="javascript:void(0);">Computer Department</a>
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+        </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2> EDIT BATCH </h2>
+            </div>
+
+            <form action="/edit_timetable_batch" method="POST">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         <div class="card"> 
+                            <div class="header">
+                                <h2>
+                                    <small>Please enter the Semester Number the dropdown menu</small></h2>
+                                    <select name = 'Semester_Number' id = 'Semester_Number'>
+                                        <option> 1</option>
+                                        <option> 2</option>
+                                    </select>
+                                <h2>
+                                      <small>Please select the day from the dropdown menu</small>
+                                </h2>   
+                                    <select name = 'Edit_Batch_Day' id = 'Edit_Batch_Day'>
+                                        <option> Monday</option>
+                                        <option> Tuesday</option>
+                                        <option> Wednesday</option>
+                                        <option> Thursday</option>
+                                        <option> Friday</option>
+                                        <option> Saturday</option>
+                                    </select><br>
+                                <h2>
+                                <small>Please enter the Slot from the dropdown menu</small></h2>
+                                <select name = 'Edit_Batch_Slot' id = 'Edit_Batch_Slot'>
+                                        <option> 1</option>
+                                        <option> 2</option>
+                                        <option> 3</option>
+                                        <option> 4</option>
+                                        <option> 5</option>
+                                        <option> 6</option>
+                                        <option> 7</option>
+                                        <option> 8</option>
+                                    </select><br>
+                                    <h2>
+                                <small>Please enter the Location from the dropdown menu</small></h2>
+                                <select name = 'Edit_Batch_Location' id = 'Edit_Batch_Location'>
+                                        <option> SL1</option>
+                                        <option> SL2</option>
+                                        <option> SysL</option>
+                                        <option> HL</option>
+                                        <option> PR</option>
+                                        <option> PL</option>
+                                        <option> ONL1</option>
+                                        <option> ONL2</option>
+                                        <option> ONL3</option>
+                                        <option> PGL</option>
+                                        <option> 422</option>
+                                        <option> 424</option>
+                                        <option> 320</option>
+                                        <option> 325</option>
+                                        <option> 420B</option>
+                                </select>
+
+                                <h2><small> Please enter the Class from the dropdown menu</small></h2>
+                                    <select id="Edit_Batch_Class" name="Edit_Batch_Class" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);">
+                                    <option value="">--Select class--</option>
+                                    <option value="FE">FE</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TE">TE</option>
+                                    <option value="BE">BE</option>
+                                    <option value="BE">ME</option>
+                                    <option value="NULL">NULL</option>
+                                    </select> <br><br>
+
+                                    <div class="sub_category_div" id="sub_category_div"> <br>
+                                        <p>
+                                                <b>Enter Batch</b>
+                                            </p>
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" name="batch_name" id="batch_name" placeholder="Batch Name" required autofocus>
+                                                <p> <small>Example: Class :SE<br>
+                                                                    Batch: SE1(First Shift ,Full Class) <br>
+                                                                    Batch: SE11(First Shift, S1) <br>
+                                                                    Batch: SE2(Second Shift, Full Class) <br>
+                                                                    Batch: SE12(Second Shift, S1) <br>     
+                                                
+                                                </small> </p>
+                                            </div><br><br>
+                                </div> <br>
+                                
+                <div class="col-xs-4">
+                     <button class="btn btn-block bg-pink waves-effect" name="Edit_Batch_Submit" id="Edit_Batch_Submit" type="submit">Submit</button>
+                       </div>
+                           </div>
+                            </div>
+                            </div>        
+                </form>
+
+                    <H3>{{data}}</H3>
+
+ <script src="/static/js/addy_js/app.js"></script>
+ 
+ <!-- Jquery Core Js -->
+ <script src="/static/js/jquery/jquery.min.js"></script>
+
+ <!-- Bootstrap Core Js -->
+ <script src="/static/js/bootstrap/js/bootstrap.js"></script>
+
+ <!-- Select Plugin Js -->
+ <script src="/static/js/bootstrap-select/js/bootstrap-select.js"></script>
+
+ <!-- Slimscroll Plugin Js -->
+ <script src="/static/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+ <!-- Waves Effect Plugin Js -->
+ <script src="/static/js/node-waves/waves.js"></script>
+
+ <!-- Custom Js -->
+ <script src="/static/js/Basic_js/admin.js"></script>
+
+ <!-- Demo Js -->
+ <script src="/static/js/Basic_js/demo.js"></script>
+</body>
+
+</html>
+
+         
