@@ -1,21 +1,20 @@
-#import xlrd
-#from xlrd import open_workbook
-#from xlutils.copy import copy
-#import xlwt
-#from xlwt import easyxf
-
-
 from flask import Flask
 from flask import send_file
 import openpyxl
 from openpyxl import load_workbook,Workbook
 
 def excel_batch(batch_info,shift_info,batch_data):
+    """ Preparing excel sheet for batch wise timetable
+        
+        Args:
+        1. batch_info - Batch inputted by user(FE,SE,TE,BE,etc)
+        2. shift_info - SHift number inputted by user(1st shift OR 2nd shift)
+        3. batch_data - Data from master timetable of particular batch_info and shift_info
+    """
     Main=[]
     print(batch_info)
     print(shift_info)
     if batch_info == 'FE' and shift_info == '1':
-        print('hey this is fe1')
         loc = './excel/FE1.xlsx'
         xfile = openpyxl.load_workbook(loc)
         sheet = xfile.get_sheet_by_name('Sheet1')    
@@ -38,7 +37,6 @@ def excel_batch(batch_info,shift_info,batch_data):
         
 
     elif batch_info == 'FE' and shift_info == '2':
-        print('hey this is FE2')
         loc = './excel/FE2.xlsx'
         xfile = openpyxl.load_workbook(loc)
         sheet = xfile.get_sheet_by_name('Sheet1')    
@@ -231,6 +229,11 @@ def excel_batch(batch_info,shift_info,batch_data):
     return loc
 
 def excel_location(location_info):
+    """ Preparing excel sheet for location wise timetable
+        
+        Args:
+        1. location_info - Data from master timetable of particular location i.e. classroom number
+    """
     Main=[]
     loc = './excel/Location.xlsx'
     xfile = openpyxl.load_workbook(loc)
@@ -254,6 +257,11 @@ def excel_location(location_info):
     return loc
 
 def excel_teacher(teacher_info):
+    """ Preparing excel sheet for faculty wise timetable
+        
+        Args:
+        1. teacher_info - Data from master timetable of particular teacher 
+    """
     Main=[]
     loc = './excel/Teacher.xlsx'
     xfile = openpyxl.load_workbook(loc)
@@ -277,6 +285,11 @@ def excel_teacher(teacher_info):
     return loc
 
 def excel_master(master_info):
+    """ Preparing excel sheet for master timetable
+        
+        Args:
+        1. master_info - Data of master timetable 
+    """
     Main=[]
     loc = './excel/Master.xlsx'
     xfile = openpyxl.load_workbook(loc)
@@ -295,46 +308,3 @@ def excel_master(master_info):
             row = row + 1
     xfile.save(loc)
     return loc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''  from flask import Flask
-from flask import send_file
-app = Flask(__name__)
-
-@app.route('/download')
-def downloadFile ():
-    #For windows you need to use drive name [ex: F:/Example.pdf]
-    path = "/Examples.pdf"
-    return send_file(path, as_attachment=True)
-
-if __name__ == '__main__':
-    app.run(port=5000,debug=True) '''
-
-
-
-
