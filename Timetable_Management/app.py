@@ -31,6 +31,7 @@ bcrypt = Bcrypt(app)
 @app.route('/home', methods =['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """ Accepts username and password inputted by user and checks against database for authentication puropse """
     if request.method == 'POST':
         db = db_connect()
         connection = db.connect()
@@ -82,6 +83,7 @@ def dashboard():
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
+    """ Redirects user to login page after logging out of account """
     if request.method == 'GET':
         session.clear()
         return redirect(url_for('login'))
@@ -99,6 +101,7 @@ def view_timetable():
 
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
+    """ For updating username,password or adding another user """
     if g.user:
         if request.method == 'POST':
             
@@ -208,6 +211,7 @@ def settings():
 
 @app.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password():
+    """ Can update to new password incase forgotten password"""
     if request.method == 'POST':
         db = db_connect()
         connection = db.connect()
@@ -239,6 +243,7 @@ def forgot_password():
 
 @app.route('/create_timetable', methods=['GET', 'POST'])
 def create_tt():
+    """Accepts timetable data from user to create a new timetable """
     if g.user:
         if request.method == 'POST':
             
@@ -282,6 +287,13 @@ def create_tt():
 
 
 def check_validation(Sem):
+    """Checks if all slots in a semester are full and throws error if try to add another slot
+          
+          Args: 
+          Sem:  Checks if it is for semester 1 or semester 2
+          Returns:
+          returns true if slots are available else returns false
+    """
     
     db = db_connect()
     connection = db.connect()
@@ -390,6 +402,7 @@ def upload_file():
 
 @app.route('/view_timetable_master', methods=['GET', 'POST'])
 def view_tt_master():
+    """ Displays the master timetable and provides option for downloading it in an excel sheet format """
     if g.user:
         if request.method == 'POST':
             if request.form.get('submit') ==  'submit':
@@ -411,6 +424,7 @@ def view_tt_master():
 
 @app.route('/view_timetable_teacher', methods=['GET', 'POST'])
 def view_tt_teacher():
+    """ Accepts teacher name from user and displays the teacher timetable. Also provides option for downloading it in an excel sheet format """
     if g.user:
         if request.method == 'POST':
             teacher = request.form.get('teacher_name')
@@ -432,6 +446,7 @@ def view_tt_teacher():
 
 @app.route('/view_timetable_location', methods=['GET', 'POST'])
 def view_tt_location():
+    """ Accepts Location from user and displays the location timetable. Also provides option for downloading it in an excel sheet format """
     if g.user:
         if request.method == 'POST':
             location = request.form.get('Edit_Faculty_Location')
@@ -453,6 +468,7 @@ def view_tt_location():
 
 @app.route('/view_timetable_batch', methods=['GET', 'POST'])
 def view_tt_batch():
+    """ Accepts Batch from user and displays the particular batch's timetable. Also provides option for downloading it in an excel sheet format """
     if g.user:
         if request.method == 'POST':
             shift = request.form.get('Edit_Shift_TT')
@@ -477,6 +493,15 @@ def view_tt_batch():
     return '''<h2>Unauthorised Access Visit <a href ='/login'>login<a></h2>'''
 
 def fetch_batch(batch,shift):
+    """ Fetches batch data from master timetable accroding to Batch name and shift
+
+         Args: 
+         1.batch - Batch given by user(FE,SE,TE,BE,etc)
+         2.shift - Shift given by user(1st OR 2nd shift)
+
+         Returns:
+         data of particular batch and shift from master timetable by user to view_tt_batch    
+    """
     if batch == 'FE' and shift == '1':
         grade = '^F1'
         data = view_batch(grade)
@@ -530,6 +555,7 @@ def edit_timetable():
 
 @app.route('/edit_timetable_faculty', methods=['GET', 'POST'])
 def edit_timetable_faculty():
+    """Provides edit facility for changing faculty """
     if g.user:
         if request.method == 'POST':
             db = db_connect()
@@ -569,6 +595,7 @@ def edit_timetable_faculty():
         
 @app.route('/edit_timetable_subject', methods=['GET', 'POST'])
 def edit_timetable_subject():
+    """Provides edit facility for changing Subject  """
     if g.user:
         if request.method == 'POST':
             db = db_connect()
@@ -602,6 +629,7 @@ def edit_timetable_subject():
 
 @app.route('/edit_timetable_batch', methods=['GET', 'POST'])
 def edit_timetable_location():
+    """Provides edit facility for changing location """
     if g.user:
         if request.method == 'POST':
             db = db_connect()
@@ -637,6 +665,7 @@ def edit_timetable_location():
 
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
+    """ Delete all data from timetable """
     if g.user:
         if request.method == 'POST':
             db = db_connect()
@@ -670,6 +699,7 @@ def create_table():
 
 @app.route('/edit_timetable_all', methods=['GET', 'POST'])
 def edit_timetable_all():
+    """Provides edit facility for changing faculty, subject,Batch """
     if g.user:
         if request.method == 'POST':
             db = db_connect()
@@ -717,30 +747,4 @@ if __name__ == "__main__":
 
 
 
-'''book = xlrd.open_workbook("atpstm.xls")
-sheet = book.sheet_byJ
 
-# Establish a MySQL connection
-# Create the INSERT INTO sql query
-query = """INSERT INTO master (Day , Slot , Location, Batch, Subject, Faculty) VALUES (%s, %s, %s, %s, %s, %s)"""
-
-# Create a For loop to iterate through each row in the XLS file, starting at row 2 to skip the headers
-for r in range(1, sheet.nrows):
-    Day		= sheet.cell(r,0).value
-    Time	= sheet.cell(r,1).value
-    Location		= sheet.cell(r,2).value
-    Batch		= sheet.cell(r,3).value
-    Subject	= sheet.cell(r,4).value
-    Faculty	    = sheet.cell(r,5).value
-    
-	# Assign values from each row
-    #values = (Day , Time , SL1 , SL2 , SysL , HL , PR , PL , ONL1 , ONL2 , ONL3 , PGL , R422 , R424 , R320 , R325 , R420B )
-
-	# Execute sql Query
-    connection.execute(query, values)
-
-columns = str(sheet.ncols)
-rows = str(sheet.nrows)
-#print ("I just imported " %2B columns %2B " columns and " %2B rows %2B " rows to MySQL!")
-print ('DONE')
-'''
